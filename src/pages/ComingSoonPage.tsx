@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Sparkles, Clock, Mail, Heart } from 'lucide-react';
 
@@ -14,6 +14,13 @@ const LAUNCH_DATE = new Date(
 
 const LOGO_URL =
   'https://res.cloudinary.com/dsk62cvbs/image/upload/v1779126323/GLC_ms1rrt.png';
+
+// Background slideshow images (cycled every BG_INTERVAL ms)
+const BG_IMAGES = [
+  'https://res.cloudinary.com/dsk62cvbs/image/upload/v1779233012/IMG_0720_tb4chf.jpg',
+  'https://res.cloudinary.com/dsk62cvbs/image/upload/v1779233012/IMG_0528_ftj8lj.jpg',
+];
+const BG_INTERVAL = 6000;
 
 type TimeLeft = {
   days: number;
@@ -46,6 +53,7 @@ const ComingSoonPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [bgIndex, setBgIndex] = useState(0);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -53,6 +61,22 @@ const ComingSoonPage = () => {
     }, 1000);
     return () => window.clearInterval(id);
   }, [target]);
+
+  // Rotate background images on a timer
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setBgIndex((i) => (i + 1) % BG_IMAGES.length);
+    }, BG_INTERVAL);
+    return () => window.clearInterval(id);
+  }, []);
+
+  // Preload images so the swipe transition feels instant
+  useEffect(() => {
+    BG_IMAGES.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,6 +126,34 @@ const ComingSoonPage = () => {
       </Helmet>
 
       <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#1a5f3f] via-[#462501] to-[#2e1801] text-white">
+        {/* Background image slideshow (swipe + subtle Ken-Burns zoom) */}
+        <AnimatePresence mode="sync" initial={false}>
+          <motion.div
+            key={bgIndex}
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${BG_IMAGES[bgIndex]})` }}
+            initial={{ opacity: 0, scale: 1.08, x: '6%' }}
+            animate={{ opacity: 1, scale: 1, x: '0%' }}
+            exit={{ opacity: 0, scale: 1.04, x: '-6%' }}
+            transition={{
+              opacity: { duration: 1.4, ease: 'easeInOut' },
+              scale: { duration: 6, ease: 'linear' },
+              x: { duration: 1.6, ease: [0.4, 0, 0.2, 1] },
+            }}
+          />
+        </AnimatePresence>
+
+        {/* Dark gradient overlay for readability */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#1a5f3f]/80 via-[#462501]/80 to-[#2e1801]/90"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-black/30"
+        />
+
         {/* Animated blurred orbs */}
         <motion.div
           aria-hidden
