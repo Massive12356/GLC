@@ -140,13 +140,31 @@ const ComingSoonPage = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 flex items-center justify-center"
           >
-            <div className="rounded-full bg-white/10 p-4 backdrop-blur-md ring-1 ring-white/20">
+            <motion.div
+              animate={{
+                scale: [1, 1.08, 1, 1.12, 1],
+                boxShadow: [
+                  '0 0 0 0 rgba(132, 204, 22, 0.55)',
+                  '0 0 0 14px rgba(132, 204, 22, 0)',
+                  '0 0 0 0 rgba(132, 204, 22, 0.55)',
+                  '0 0 0 18px rgba(132, 204, 22, 0)',
+                  '0 0 0 0 rgba(132, 204, 22, 0)',
+                ],
+              }}
+              transition={{
+                duration: 1.4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                times: [0, 0.2, 0.4, 0.6, 1],
+              }}
+              className="rounded-full bg-white p-5 ring-4 ring-white/40 shadow-2xl"
+            >
               <img
                 src={LOGO_URL}
                 alt="Generational Life Changers"
                 className="h-24 w-24 object-contain md:h-32 md:w-32"
               />
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Pill badge */}
