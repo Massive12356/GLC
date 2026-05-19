@@ -44,6 +44,8 @@ const ComingSoonPage = () => {
   );
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -52,12 +54,34 @@ const ComingSoonPage = () => {
     return () => window.clearInterval(id);
   }, [target]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    // For now just acknowledge — wire to API later if needed.
-    setSubmitted(true);
-    setEmail('');
+    if (!email || submitting) return;
+    setSubmitting(true);
+    setErrorMsg(null);
+
+    try {
+      const res = await fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.error || 'Could not subscribe. Please try again.');
+      }
+
+      setSubmitted(true);
+      setEmail('');
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : 'Could not subscribe. Please try again.';
+      setErrorMsg(message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const timeBoxes: { label: string; value: number }[] = [
@@ -244,18 +268,20 @@ const ComingSoonPage = () => {
                   <input
                     type="email"
                     required
+                    disabled={submitting}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email to get notified"
-                    className="w-full rounded-full border border-white/20 bg-white/10 py-3 pl-11 pr-4 text-sm text-white placeholder-white/60 backdrop-blur-md outline-none transition focus:border-accent-light focus:bg-white/15"
+                    className="w-full rounded-full border border-white/20 bg-white/10 py-3 pl-11 pr-4 text-sm text-white placeholder-white/60 backdrop-blur-md outline-none transition focus:border-accent-light focus:bg-white/15 disabled:opacity-60"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/30 transition hover:scale-[1.03] hover:bg-accent-light"
+                  disabled={submitting}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/30 transition hover:scale-[1.03] hover:bg-accent-light disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
                 >
                   <Heart className="h-4 w-4" />
-                  Notify Me
+                  {submitting ? 'Sending…' : 'Notify Me'}
                 </button>
               </form>
             ) : (
@@ -266,6 +292,15 @@ const ComingSoonPage = () => {
               >
                 Thank you! We will let you know the moment we launch.
               </motion.div>
+            )}
+            {errorMsg && !submitted && (
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 text-xs text-red-300"
+              >
+                {errorMsg}
+              </motion.p>
             )}
           </motion.div>
 
