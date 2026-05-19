@@ -10,7 +10,7 @@ const PracticeAreasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Practice Areas | Legal Services & Expertise</title>
+        <title>Practice Areas | Generational Life Changers</title>
         <meta name="description" content="Comprehensive legal services including corporate law, real estate, employment, and more. Expert counsel across multiple practice areas." />
         <meta name="keywords" content="practice areas, legal services, corporate law, real estate law, employment law" />
         <meta property="og:title" content="Practice Areas | Legal Services & Expertise" />

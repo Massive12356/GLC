@@ -10,7 +10,7 @@ const LawyersPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Legal Team | Expert Attorneys & Lawyers</title>
+        <title>Our Legal Team | Generational Life Changers</title>
         <meta name="description" content="Meet our experienced attorneys with diverse expertise in corporate law, real estate, and more. Dedicated to your legal success." />
         <meta name="keywords" content="attorneys, lawyers, legal professionals, law firm team, expert counsel" />
         <meta property="og:title" content="Our Legal Team | Expert Attorneys & Lawyers" />

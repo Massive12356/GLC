@@ -8,7 +8,7 @@ const SuccessStoriesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Success Stories | Nyamedua Foundation</title>
+        <title>Success Stories | Generational Life Changers</title>
         <meta name="description" content="Read inspiring patient success stories from Nyamedua Foundation. Real lives transformed through life-saving healthcare." />
         <meta property="og:title" content="Success Stories | Nyamedua Foundation" />
         <meta property="og:description" content="Real patients. Real recoveries. Real impact." />

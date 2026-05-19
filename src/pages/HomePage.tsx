@@ -123,7 +123,7 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Nyamedua Foundation | Ensuring Equitable Access to Life-Saving Healthcare</title>
+        <title>Generational Life Changers | Ensuring Equitable Access to Life-Saving Healthcare</title>
         <meta name="description" content="Nyamedua supports financially disadvantaged patients who cannot afford life-saving medical procedures and surgeries across West Africa." />
         <meta name="keywords" content="healthcare NGO, medical charity, surgery funding, West Africa, Ghana, patient support, health education" />
         <meta property="og:title" content="Nyamedua Foundation | Life-Saving Healthcare for Everyone" />

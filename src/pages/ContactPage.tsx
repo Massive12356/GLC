@@ -39,7 +39,7 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Nyamedua Foundation</title>
+        <title>Contact Us | Generational Life Changers</title>
         <meta name="description" content="Get in touch with Nyamedua Foundation. We'd love to hear from you about partnerships, volunteering, donations, or general inquiries." />
         <meta name="keywords" content="contact Nyamedua, healthcare NGO Ghana, volunteer, partner, donate" />
         <meta property="og:title" content="Contact Us | Nyamedua Foundation" />

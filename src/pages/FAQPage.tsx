@@ -12,7 +12,7 @@ const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ | Nyamedua Foundation</title>
+        <title>FAQ | Generational Life Changers</title>
         <meta name="description" content="Frequently asked questions about donating, volunteering, and partnering with Nyamedua Foundation." />
         <meta property="og:title" content="FAQ | Nyamedua Foundation" />
         <meta property="og:description" content="Find answers to common questions about our healthcare programs." />

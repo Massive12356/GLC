@@ -5,6 +5,7 @@ import AdminLayout from './layouts/AdminLayout';
 import PageNotFound from './pages/PageNotFound';
 import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
+import ComingSoonPage from './pages/ComingSoonPage';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -93,6 +94,19 @@ const AdminRoutes = () => {
 };
 
 function App() {
+  // In production builds, show the Coming Soon page only.
+  // In development (`npm run dev`) the full app is served so we can keep building.
+  // Remove this block once development is complete.
+  if (import.meta.env.PROD) {
+    return (
+      <Router>
+        <Routes>
+          <Route path="*" element={<ComingSoonPage />} />
+        </Routes>
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <ScrollToTop />

@@ -39,7 +39,7 @@ const ConsultationPage = () => {
     return (
       <>
         <Helmet>
-          <title>Consultation Scheduled | Law Firm</title>
+          <title>Consultation Scheduled | Generational Life Changers</title>
           <meta name="description" content="Your consultation has been scheduled. Our legal team will be in touch soon." />
         </Helmet>
       <motion.div
@@ -90,7 +90,7 @@ const ConsultationPage = () => {
   return (
     <>
       <Helmet>
-        <title>Book a Legal Consultation | Schedule an Appointment</title>
+        <title>Book a Legal Consultation | Generational Life Changers</title>
         <meta name="description" content="Schedule a consultation with our experienced legal team. Discuss your legal needs with our attorneys." />
         <meta name="keywords" content="legal consultation, book appointment, attorney meeting, consultation form" />
         <meta property="og:title" content="Book a Legal Consultation | Schedule an Appointment" />

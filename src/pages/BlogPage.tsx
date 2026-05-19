@@ -19,7 +19,7 @@ const BlogPage = () => {
   return (
     <>
       <Helmet>
-        <title>Health Education Blog | Nyamedua Foundation</title>
+        <title>Health Education Blog | Generational Life Changers</title>
         <meta name="description" content="Explore health education articles, medical awareness, and patient stories from Nyamedua Foundation serving West Africa." />
         <meta name="keywords" content="health education, medical blog, West Africa health, patient stories, malaria, maternal health" />
         <meta property="og:title" content="Health Education Blog | Nyamedua Foundation" />

@@ -162,7 +162,7 @@ const EventRegistrationPage = () => {
   return (
     <>
       <Helmet>
-        <title>Register for {event.title} | Nyamedua Foundation</title>
+        <title>Register for {event.title} | Generational Life Changers</title>
         <meta name="description" content={`Register for ${event.title}. ${event.description}`} />
       </Helmet>
 

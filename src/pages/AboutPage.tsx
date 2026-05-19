@@ -17,7 +17,7 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Nyamedua Foundation</title>
+        <title>About Us | Generational Life Changers</title>
         <meta name="description" content="Learn about Nyamedua Foundation - ensuring equitable access to life-saving healthcare across West Africa." />
         <meta name="keywords" content="Nyamedua, healthcare NGO, medical charity, Ghana, West Africa, patient support, surgery funding" />
         <meta property="og:title" content="About Us | Nyamedua Foundation" />

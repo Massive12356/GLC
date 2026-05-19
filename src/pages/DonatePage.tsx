@@ -44,7 +44,7 @@ const DonatePage = () => {
   return (
     <>
       <Helmet>
-        <title>Donate | Nyamedua Foundation</title>
+        <title>Donate | Generational Life Changers</title>
         <meta name="description" content="Support Nyamedua Foundation in funding life-saving surgeries and healthcare for disadvantaged patients across West Africa." />
       </Helmet>
 

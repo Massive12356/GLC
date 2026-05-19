@@ -10,7 +10,7 @@ const EventsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Events & Programs | Nyamedua Foundation</title>
+        <title>Events & Programs | Generational Life Changers</title>
         <meta name="description" content="Join Nyamedua Foundation events, health screenings, workshops, and community outreach programs across West Africa." />
       </Helmet>
 

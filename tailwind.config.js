@@ -31,8 +31,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Quicksand', 'system-ui', 'sans-serif'],
-        sans: ['Quicksand', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

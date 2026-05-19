@@ -15,7 +15,7 @@ const ProjectDetailPage = () => {
   return (
     <>
       <Helmet>
-        <title>{project.title} | Nyamedua Foundation</title>
+        <title>{project.title} | Generational Life Changers</title>
         <meta name="description" content={project.description} />
       </Helmet>
 

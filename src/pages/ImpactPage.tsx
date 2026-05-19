@@ -55,7 +55,7 @@ const ImpactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Impact | Nyamedua Foundation</title>
+        <title>Our Impact | Generational Life Changers</title>
         <meta name="description" content="See how Nyamedua Foundation is transforming lives through funded surgeries, health outreach, and community education across West Africa." />
         <meta property="og:title" content="Our Impact | Nyamedua Foundation" />
         <meta property="og:description" content="147+ surgeries funded, 8,500+ patients screened, 60 communities reached." />

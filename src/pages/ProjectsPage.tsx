@@ -16,7 +16,7 @@ const ProjectsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Programs | Nyamedua Foundation</title>
+        <title>Our Programs | Generational Life Changers</title>
         <meta name="description" content="Explore Nyamedua Foundation's healthcare programs and interventions saving lives across West Africa." />
       </Helmet>
 

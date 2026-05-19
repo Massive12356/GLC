@@ -37,7 +37,7 @@ const VolunteerPage = () => {
   return (
     <>
       <Helmet>
-        <title>Volunteer With Us | Nyamedua Foundation</title>
+        <title>Volunteer With Us | Generational Life Changers</title>
         <meta name="description" content="Join Nyamedua Foundation as a volunteer and help deliver life-saving healthcare to communities across West Africa." />
       </Helmet>
 

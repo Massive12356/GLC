@@ -48,7 +48,7 @@ const PartnersPage = () => {
   return (
     <>
       <Helmet>
-        <title>Partner With Us | Nyamedua Foundation</title>
+        <title>Partner With Us | Generational Life Changers</title>
         <meta name="description" content="Partner with Nyamedua Foundation to expand access to life-saving healthcare across West Africa." />
       </Helmet>
 

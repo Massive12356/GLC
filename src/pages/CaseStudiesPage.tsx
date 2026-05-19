@@ -13,7 +13,7 @@ const CaseStudiesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies | Successful Legal Outcomes</title>
+        <title>Case Studies | Generational Life Changers</title>
         <meta name="description" content="Real-world examples of our legal expertise and successful outcomes. See how we've helped clients across various industries and legal matters." />
         <meta name="keywords" content="case studies, success stories, legal outcomes, client results, legal expertise" />
         <meta property="og:title" content="Case Studies | Successful Legal Outcomes" />
