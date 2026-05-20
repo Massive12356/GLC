@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import MainLayout from './layouts/MainLayout';
 import AdminLayout from './layouts/AdminLayout';
 import PageNotFound from './pages/PageNotFound';
@@ -105,6 +106,7 @@ function App() {
         <Routes>
           <Route path="*" element={<ComingSoonPage />} />
         </Routes>
+        <Analytics />
       </Router>
     );
   }
@@ -119,6 +121,7 @@ function App() {
         <Route path="/*" element={<PublicRoutes />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
