@@ -94,10 +94,12 @@ const AdminRoutes = () => {
 };
 
 function App() {
-  // In production builds, show the Coming Soon page only.
-  // In development (`npm run dev`) the full app is served so we can keep building.
+  // The Coming Soon page is shown by default everywhere (dev + production)
+  // so we can keep iterating on it. To work on the full site locally,
+  // set `VITE_SHOW_COMING_SOON=false` in .env.local and restart the dev server.
   // Remove this block once development is complete.
-  if (import.meta.env.PROD) {
+  const showComingSoon = import.meta.env.VITE_SHOW_COMING_SOON !== 'false';
+  if (showComingSoon) {
     return (
       <Router>
         <Routes>
